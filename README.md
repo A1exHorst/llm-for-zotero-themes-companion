@@ -1,9 +1,9 @@
 # LLM for Zotero — Themes Companion
 
-![Dark theme preview](docs/images/theme-configuration-preview-dark.png)
-
 Give [LLM for Zotero](https://github.com/yilewang/llm-for-zotero) a new look with
-20 themes, live previews, and custom CSS—without modifying the original plugin.
+20+ themes, live previews, and custom CSS—without modifying the original plugin.
+
+![Dark theme preview](docs/images/theme-configuration-preview-dark.png)
 
 **This project is 100% vibecoded.** Its code, themes, and documentation were
 created with AI coding agents, guided by human requests, testing, and feedback.
