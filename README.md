@@ -41,7 +41,7 @@ You need **both** the original LLM for Zotero plugin and this companion.
 
 1. Install the original plugin from its
    [upstream releases](https://github.com/yilewang/llm-for-zotero/releases).
-2. Download the companion `.xpi` from this repository's [**Releases** page](https://github.com/A1exHorst/llm-for-zotero-themes-companion/releases),
+2. Download the companion `.xpi` from this repository's [Releases page](https://github.com/A1exHorst/llm-for-zotero-themes-companion/releases),
    or build it from source using the instructions below.
 3. In Zotero, open **Tools → Plugins → gear icon → Install Plugin From File**
    and select the companion `.xpi`. Restart Zotero.
