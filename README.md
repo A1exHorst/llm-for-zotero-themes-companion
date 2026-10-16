@@ -1,5 +1,7 @@
 # LLM for Zotero — Themes Companion
 
+![Dark theme preview](docs/images/theme-configuration-preview-dark.png)
+
 Give [LLM for Zotero](https://github.com/yilewang/llm-for-zotero) a new look with
 20 themes, live previews, and custom CSS—without modifying the original plugin.
 
