@@ -10,7 +10,7 @@ created with AI coding agents, guided by human requests, testing, and feedback.
 
 ## Features
 
-- **20 themes**, plus an Original option that follows Zotero's appearance.
+- **20+ themes**, plus an Original option that follows Zotero's appearance.
 - **Visual theme gallery** with previews before applying a selection.
 - **Live switching** across open chat surfaces, with your selection saved across restarts.
 - **Custom CSS editor and file import**, applied without rebuilding the add-on.
