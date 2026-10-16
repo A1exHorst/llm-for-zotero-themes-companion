@@ -1,0 +1,25 @@
+{
+  "name": "llm-for-zotero-themes-companion",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Independent themes and scoped custom CSS for the original LLM for Zotero plugin",
+  "license": "AGPL-3.0-or-later",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx node_modules/mocha/bin/mocha.js \"test/**/*.test.ts\"",
+    "test:zotero": "node scripts/test-zotero.mjs"
+  },
+  "devDependencies": {
+    "@types/chai": "5.2.3",
+    "@types/mocha": "10.0.10",
+    "@types/node": "24.10.0",
+    "adm-zip": "0.5.16",
+    "chai": "6.2.1",
+    "esbuild": "0.25.12",
+    "mocha": "11.7.5",
+    "tsx": "4.21.0",
+    "typescript": "5.9.3"
+  }
+}

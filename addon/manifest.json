@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "LLM for Zotero — Themes Companion",
+  "version": "1.1.0",
+  "description": "20 themes, live previews and scoped custom CSS for the original LLM for Zotero plugin.",
+  "icons": { "48": "content/icons/icon-48.png" },
+  "applications": {
+    "zotero": {
+      "id": "llm-themes-companion@local.zotero",
+      "update_url": "https://updates.invalid/llm-themes-companion/updates.json",
+      "strict_min_version": "7.0",
+      "strict_max_version": "10.*"
+    }
+  }
+}

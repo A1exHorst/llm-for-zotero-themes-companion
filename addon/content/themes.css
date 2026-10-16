@@ -1,0 +1,682 @@
+/* Loaded after zoteroPane.css. Every rule belongs to an explicitly owned root.
+ * Original appearance deliberately has no overrides. Layout and user font-size
+ * preferences remain with the existing stylesheet. */
+
+/* Preferences controls are plugin-owned; they follow Zotero while the sample
+ * chat below each card demonstrates the independently selected appearance. */
+.llm-appearance-settings {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 4px 0 16px;
+  color: var(--fill-primary, inherit);
+}
+
+.llm-appearance-settings > h2,
+.llm-appearance-settings > h3 {
+  margin: 16px 0 8px;
+  letter-spacing: -0.015em;
+}
+
+.llm-appearance-settings p {
+  line-height: 1.55;
+}
+
+.llm-theme-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 155px), 1fr));
+  gap: 10px;
+  margin: 14px 0;
+}
+
+/* Native preferences buttons have a fixed single-line height. These cards
+ * contain a palette and a wrapping name, so they must size to their content. */
+.llm-appearance-settings .llm-theme-card {
+  appearance: none;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 7px;
+  min-width: 0;
+  height: auto;
+  min-height: 84px;
+  max-height: none;
+  margin: 0;
+  padding: 10px;
+  text-align: left;
+  font: inherit;
+  line-height: 1.4;
+  white-space: normal;
+  color: var(--fill-primary, #26334a);
+  background: var(--material-background, #ffffff);
+  border: 1px solid var(--stroke-secondary, #c9cfdb);
+  border-radius: 11px;
+  cursor: pointer;
+}
+
+.llm-theme-card:hover {
+  border-color: var(--color-accent, #536acc);
+  background: color-mix(
+    in srgb,
+    var(--color-accent, #536acc) 5%,
+    var(--material-background, #ffffff)
+  );
+}
+
+.llm-theme-card[aria-pressed="true"] {
+  border-color: var(--color-accent, #536acc);
+  box-shadow: 0 0 0 2px
+    color-mix(in srgb, var(--color-accent, #536acc) 28%, transparent);
+}
+
+.llm-theme-card:focus-visible,
+.llm-theme-actions button:focus-visible,
+.llm-css-editor:focus-visible {
+  outline: 2px solid var(--color-accent, #536acc);
+  outline-offset: 3px;
+}
+
+.llm-theme-card strong {
+  font-weight: 600;
+}
+
+.llm-theme-card small {
+  display: block;
+  color: var(--fill-secondary, #63718a);
+  line-height: 1.4;
+  white-space: normal;
+}
+
+.llm-theme-swatch {
+  display: flex;
+  align-items: stretch;
+  height: 32px;
+  min-height: 32px;
+  flex: 0 0 32px;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(120, 120, 140, 0.2);
+  border-radius: 6px;
+}
+
+.llm-theme-card > span:last-child {
+  display: block;
+  flex: 0 0 auto;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.llm-theme-swatch i {
+  display: block;
+  flex: 1 1 0;
+}
+
+.llm-theme-swatch i:first-child {
+  flex-grow: 2.5;
+}
+
+.llm-theme-preview.llm-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  margin: 14px 0;
+  padding: 18px;
+  overflow: hidden;
+  border: 1px solid var(--llm-theme-border, var(--stroke-secondary, #c9cfdb));
+  border-radius: var(--llm-theme-radius, 12px);
+  box-sizing: border-box;
+}
+
+.llm-theme-preview .llm-bubble.user {
+  align-self: flex-end;
+  max-width: 85%;
+}
+
+.llm-theme-preview .llm-bubble {
+  padding: 10px 14px;
+  line-height: 1.6;
+}
+
+.llm-theme-preview .hljs-keyword {
+  color: var(--llm-theme-secondary, #8053b0);
+}
+
+.llm-theme-preview .hljs-string {
+  color: var(--llm-theme-success, #23764b);
+}
+
+.llm-theme-preview .llm-bubble.assistant {
+  align-self: flex-start;
+}
+
+.llm-theme-preview .llm-codeblock {
+  margin: 0;
+  padding: 12px;
+  overflow: auto;
+  color: var(--llm-codeblock-text, var(--fill-primary));
+  background: var(--llm-codeblock-bg, var(--material-background));
+  border: 1px solid var(--llm-codeblock-border, var(--stroke-secondary));
+  font:
+    12px/1.6 Consolas,
+    "SFMono-Regular",
+    monospace;
+}
+
+.llm-theme-preview .llm-input-section {
+  padding: 10px 12px;
+}
+
+.llm-theme-preview > input {
+  padding: 10px 12px;
+  font: inherit;
+  border: 1px solid var(--llm-theme-border, var(--stroke-secondary, #c9cfdb));
+  border-radius: var(--llm-theme-control-radius, 8px);
+}
+
+.llm-theme-preview > .llm-modal-primary {
+  align-self: flex-end;
+  min-width: 76px;
+  padding: 8px 16px;
+  border: 1px solid var(--llm-theme-border, var(--stroke-secondary, #c9cfdb));
+  border-radius: var(--llm-theme-control-radius, 8px);
+  font: inherit;
+}
+
+.llm-theme-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.llm-theme-actions button {
+  margin: 0;
+  padding: 7px 12px;
+  color: var(--fill-primary, #26334a);
+  background: var(--material-background, #ffffff);
+  border: 1px solid var(--stroke-secondary, #c9cfdb);
+  border-radius: 7px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.llm-theme-actions button:hover:not(:disabled) {
+  border-color: var(--color-accent, #536acc);
+}
+
+.llm-css-editor {
+  display: block;
+  width: 100%;
+  min-height: 190px;
+  padding: 12px;
+  resize: vertical;
+  box-sizing: border-box;
+  color: var(--fill-primary, #26334a);
+  background: var(--material-background, #ffffff);
+  border: 1px solid var(--stroke-secondary, #c9cfdb);
+  border-radius: 9px;
+  font:
+    12px/1.6 Consolas,
+    "SFMono-Regular",
+    monospace;
+  tab-size: 2;
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  ),
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  .llm-panel {
+  --material-background: var(--llm-theme-surface);
+  --material-sidepane: var(--llm-theme-bg);
+  --material-toolbar: var(--llm-theme-surface);
+  --llm-pref-field: var(--llm-theme-surface);
+  --llm-pref-stroke: var(--llm-theme-border);
+  --material-panedivider: var(--llm-theme-border);
+  --fill-primary: var(--llm-theme-text);
+  --fill-secondary: var(--llm-theme-muted);
+  --fill-tertiary: var(--llm-theme-muted);
+  --fill-quaternary: color-mix(in srgb, var(--llm-theme-text) 12%, transparent);
+  --fill-quinary: color-mix(in srgb, var(--llm-theme-text) 6%, transparent);
+  --stroke-primary: var(--llm-theme-border);
+  --stroke-secondary: var(--llm-theme-border);
+  --color-accent: var(--llm-theme-accent);
+  --color-accent-hover: color-mix(
+    in srgb,
+    var(--llm-theme-accent) 88%,
+    var(--llm-theme-text)
+  );
+  --color-accent-text: var(--llm-theme-accent-text);
+  --color-blue: var(--llm-theme-accent);
+  --color-green: var(--llm-theme-success);
+  --color-orange: var(--llm-theme-warning);
+  --color-red: var(--llm-theme-danger);
+  --llm-codeblock-bg: var(--llm-theme-code);
+  --llm-codeblock-border: var(--llm-theme-border);
+  --llm-codeblock-header-text: var(--llm-theme-muted);
+  --llm-codeblock-copy: var(--llm-theme-muted);
+  --llm-codeblock-copy-hover: var(--llm-theme-accent);
+  --llm-codeblock-text: var(--llm-theme-text);
+  --llm-codeblock-comment: var(--llm-theme-muted);
+  --llm-codeblock-keyword: var(--llm-theme-secondary);
+  --llm-codeblock-title: var(--llm-theme-accent);
+  --llm-codeblock-string: var(--llm-theme-success);
+  --llm-codeblock-number: var(--llm-theme-warning);
+  --llm-codeblock-meta: var(--llm-theme-danger);
+  --llm-quote-card-surface: var(--llm-theme-raised);
+  --llm-action-surface-bg: var(--llm-theme-surface);
+  --llm-action-surface-bg-strong: var(--llm-theme-raised);
+  --llm-action-surface-border: 1px solid var(--llm-theme-border);
+  --llm-action-surface-radius: var(--llm-theme-radius);
+  --llm-popup-surface-bg: var(--llm-theme-raised);
+  --llm-popup-surface-border: var(--llm-theme-border);
+  --llm-task-progress-shadow: var(--llm-theme-shadow);
+  --llm-diff-add-bg: color-mix(
+    in srgb,
+    var(--llm-theme-success) 12%,
+    var(--llm-theme-surface)
+  );
+  --llm-diff-add-strong: color-mix(
+    in srgb,
+    var(--llm-theme-success) 25%,
+    var(--llm-theme-surface)
+  );
+  --llm-diff-add-fg: var(--llm-theme-success);
+  --llm-diff-remove-bg: color-mix(
+    in srgb,
+    var(--llm-theme-danger) 12%,
+    var(--llm-theme-surface)
+  );
+  --llm-diff-remove-strong: color-mix(
+    in srgb,
+    var(--llm-theme-danger) 25%,
+    var(--llm-theme-surface)
+  );
+  --llm-diff-remove-fg: var(--llm-theme-danger);
+  --llm-history-paper-chip-text: var(--llm-theme-accent);
+  --llm-history-paper-chip-bg: color-mix(
+    in srgb,
+    var(--llm-theme-accent) 12%,
+    transparent
+  );
+  --llm-history-library-chip-text: var(--llm-theme-warning);
+  --llm-history-library-chip-bg: color-mix(
+    in srgb,
+    var(--llm-theme-warning) 12%,
+    transparent
+  );
+  --llm-history-orphan-chip-text: var(--llm-theme-danger);
+  --llm-history-orphan-chip-bg: color-mix(
+    in srgb,
+    var(--llm-theme-danger) 12%,
+    transparent
+  );
+  --llm-mermaid-canvas-bg: var(--llm-theme-surface);
+  --llm-mermaid-canvas-border: var(--llm-theme-border);
+  --llm-mermaid-button-text: var(--llm-theme-muted);
+  --llm-mermaid-button-hover-bg: var(--llm-theme-raised);
+  --llm-mermaid-viewer-panel-bg: var(--llm-theme-surface);
+  --llm-mermaid-viewer-zoom-text: var(--llm-theme-muted);
+  color: var(--llm-theme-text);
+  background: var(--llm-theme-background);
+  font-family: var(--llm-theme-font);
+  color-scheme: var(--llm-theme-scheme);
+  scrollbar-color: var(--llm-theme-border) transparent;
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  ::selection {
+  background: color-mix(
+    in srgb,
+    var(--llm-theme-accent) 35%,
+    var(--llm-theme-bg)
+  );
+  color: var(--llm-theme-text);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  :is(.llm-header, .llm-standalone-titlebar, .llm-window-titlebar) {
+  border-color: var(--llm-theme-border);
+  background: transparent;
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  :is(.llm-title, .llm-standalone-search-title, .llm-modal-title) {
+  color: var(--llm-theme-text);
+  letter-spacing: -0.015em;
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  :is(.llm-standalone-sidebar, .llm-standalone-sidebar-panel) {
+  background: color-mix(
+    in srgb,
+    var(--llm-theme-surface) 76%,
+    var(--llm-theme-bg)
+  );
+  border-color: var(--llm-theme-border);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  :is(.llm-chat-shell, .llm-messages) {
+  background: transparent;
+  color: var(--llm-theme-text);
+  border-color: var(--llm-theme-border);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  .llm-bubble.user {
+  background: var(--llm-theme-user-bg);
+  color: var(--llm-theme-text);
+  border: 1px solid
+    color-mix(in srgb, var(--llm-theme-accent) 42%, var(--llm-theme-border));
+  border-radius: var(--llm-theme-radius) var(--llm-theme-radius) 4px
+    var(--llm-theme-radius);
+  box-shadow: inset 3px 0 0
+    color-mix(in srgb, var(--llm-theme-accent) 70%, transparent);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  .llm-bubble.assistant {
+  background: transparent;
+  color: var(--llm-theme-text);
+  border-color: transparent;
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  :is(
+    .llm-input-section,
+    .llm-modal-dialog,
+    .llm-standalone-search-popup,
+    .llm-standalone-skill-popup,
+    .llm-task-progress-card
+  ) {
+  background: var(--llm-theme-surface);
+  color: var(--llm-theme-text);
+  border: 1px solid var(--llm-theme-border);
+  border-radius: var(--llm-theme-radius);
+  box-shadow: var(--llm-theme-shadow);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  .llm-input-section:focus-within {
+  border-color: var(--llm-theme-accent);
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--llm-theme-accent) 16%, transparent),
+    var(--llm-theme-shadow);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  :is(input, textarea, select) {
+  color: var(--llm-theme-text);
+  background-color: var(--llm-theme-surface);
+  border-color: var(--llm-theme-border);
+  accent-color: var(--llm-theme-accent);
+  caret-color: var(--llm-theme-accent);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  :is(input, textarea)::placeholder {
+  color: var(--llm-theme-muted);
+  opacity: 1;
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  :is(.llm-input, .llm-input:disabled) {
+  background: transparent;
+  color: var(--llm-theme-text);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  :is(
+    .llm-model-btn,
+    .llm-runtime-mode-btn,
+    .llm-reasoning-btn,
+    .llm-outline-btn,
+    .llm-modal-cancel,
+    .llm-shortcut-btn
+  ) {
+  border-radius: var(--llm-theme-control-radius);
+  color: var(--llm-theme-text);
+  border-color: var(--llm-theme-border);
+  background: var(--llm-theme-raised);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  :is(button, [role="button"], input, textarea, select):focus-visible {
+  outline: 2px solid var(--llm-theme-accent);
+  outline-offset: 2px;
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  :is(.llm-send-btn, .llm-modal-primary) {
+  background: var(--llm-theme-accent);
+  border-color: var(--llm-theme-accent);
+  color: var(--llm-theme-accent-text);
+  box-shadow: 0 3px 12px
+    color-mix(in srgb, var(--llm-theme-accent) 18%, transparent);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  :is(.llm-send-btn, .llm-modal-primary):hover:not(:disabled) {
+  background: color-mix(
+    in srgb,
+    var(--llm-theme-accent) 85%,
+    var(--llm-theme-text)
+  );
+  border-color: var(--llm-theme-accent);
+  color: var(--llm-theme-accent-text);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  :is(
+    .llm-btn-icon,
+    .llm-standalone-nav-row,
+    .llm-model-option,
+    .llm-reasoning-option,
+    .llm-history-item
+  ):hover:not(:disabled) {
+  background: color-mix(
+    in srgb,
+    var(--llm-theme-accent) 12%,
+    var(--llm-theme-surface)
+  );
+  color: var(--llm-theme-text);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  :is(
+    .llm-header-mode-tab.active,
+    .llm-reasoning-btn-active,
+    .llm-standalone-popup-item.active,
+    .llm-standalone-nav-row.active
+  ) {
+  background: color-mix(
+    in srgb,
+    var(--llm-theme-accent) 16%,
+    var(--llm-theme-surface)
+  );
+  color: var(--llm-theme-accent);
+  border-color: var(--llm-theme-accent);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  :is(
+    .llm-model-menu,
+    .llm-reasoning-menu,
+    .llm-permission-menu,
+    .llm-history-new-menu,
+    .llm-history-row-menu,
+    .llm-standalone-export-popup
+  ) {
+  background: var(--llm-theme-raised);
+  color: var(--llm-theme-text);
+  border: 1px solid var(--llm-theme-border);
+  border-radius: var(--llm-theme-control-radius);
+  box-shadow: var(--llm-theme-shadow);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  .llm-rendered-markdown
+  :is(h1, h2, h3, h4, strong) {
+  color: var(--llm-theme-text);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  .llm-rendered-markdown
+  a {
+  color: var(--llm-theme-accent);
+  text-decoration-color: color-mix(
+    in srgb,
+    var(--llm-theme-accent) 45%,
+    transparent
+  );
+  text-underline-offset: 3px;
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  .llm-rendered-markdown
+  blockquote {
+  background: color-mix(
+    in srgb,
+    var(--llm-theme-secondary) 7%,
+    var(--llm-theme-surface)
+  );
+  border-left-color: var(--llm-theme-secondary);
+  color: var(--llm-theme-muted);
+  border-radius: 0 var(--llm-theme-control-radius)
+    var(--llm-theme-control-radius) 0;
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  .llm-codeblock {
+  border-radius: var(--llm-theme-control-radius);
+  border-color: var(--llm-theme-border);
+  background: var(--llm-theme-code);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  .llm-mode-switch {
+  --llm-mode-switch-track: var(--llm-theme-surface);
+  --llm-mode-switch-thumb: var(--llm-theme-raised);
+  --llm-mode-switch-thumb-edge: var(--llm-theme-border);
+  --llm-mode-switch-edge: var(--llm-theme-border);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  :is(.llm-status-error, .llm-status-context-missing) {
+  color: var(--llm-theme-danger);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  .llm-status-warning {
+  color: var(--llm-theme-warning);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  )
+  .llm-rendered-markdown
+  :not(pre)
+  > code {
+  color: var(--llm-theme-secondary);
+  background: color-mix(
+    in srgb,
+    var(--llm-theme-secondary) 10%,
+    var(--llm-theme-surface)
+  );
+  border-color: var(--llm-theme-border);
+}
+
+/* Translucency is progressive enhancement; opaque-enough surfaces above are
+ * the fallback on hosts without backdrop-filter. Never filter the composer:
+ * backdrop-filter establishes a containing block for its fixed-position model,
+ * reasoning, and slash menus, whose coordinates are relative to the viewport. */
+[data-llm-companion-root][data-llm-companion-theme="glass"]
+  :is(.llm-modal-dialog, .llm-standalone-search-popup) {
+  backdrop-filter: blur(16px) saturate(125%);
+}
+
+/* Portal roots own their tokens without replacing the dialog's dimmed veil. */
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  ).llm-modal-overlay {
+  background: rgba(0, 0, 0, 0.48);
+}
+
+[data-llm-companion-root][data-llm-companion-theme]:not(
+    [data-llm-companion-theme="original"]
+  ).llm-web-source-popover {
+  background: var(--llm-theme-raised);
+  border-color: var(--llm-theme-border);
+  border-radius: var(--llm-theme-control-radius);
+  box-shadow: var(--llm-theme-shadow);
+}
+
+@media (forced-colors: active) {
+  [data-llm-companion-root][data-llm-companion-theme]:not(
+      [data-llm-companion-theme="original"]
+    )
+    :is(.llm-input-section, .llm-bubble.user, .llm-codeblock) {
+    border: 1px solid CanvasText;
+  }
+}
